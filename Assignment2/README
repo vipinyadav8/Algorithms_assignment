@@ -1,19 +1,18 @@
 #README file
-Storing hierarchical structure of a company
 
-We want to maintain the list of employees in a company. We will be concerned with two quantities associated with each employee in the company -- name of the employee (you can assume no two employees in the company have the same name), and the level of the employee. The level denotes where the person stands in the hierarchy. Level 1 denotes the highest post in the company (say the CEO), level 2 comes below level 1 and so on. There is only 1 person at level 1, but there can be several employees at level i > 1. Each level i employee works under a level i-1 employee, which is his/her immediate boss. Given an employee A, we can form a sequence of employees A',A'', A''', ... where A works under A', A' works under A'', and so on. We say that each employee in A',A'', A''',... is a boss of A. We would like to implement a suitable tree data-structure so that we can implement the following operations :
-AddEmployee(S,S') : We want to add a new employee whose name is S. This employee will work under an existing employee S' (note that this automatically decides the level of S, it is one more than that of S').
-DeleteEmployee(S,S') : We want to remove an employee whose name is S. S' is the name of another employee in the company who is at the same level as S. When we remove S, all the persons working under S will now work under S'.
-LowestCommonBoss(S,S') : S and S' are names of two persons working in the company. This operation prints the name of the employee A who is a boss of both S and S', and among all such persons has the largest level. In other words, we want to find the common boss who is lowest in the hierarchy in the company.
-Print Employees : This operation prints the name of the employees in the company. It should print the names according to the levels of the employees. So first it should print the person level 1, then people at level 2, and so on.
-Write a program which implements such a data-structure. Credit will be given to choice of proper data-structures and efficiency. For example, in the second operation above, one should not just search the entire tree to look for the name of the employee S'. Your program should also catch errors, for example if in the first operation above, there is no employee with name S', then it should say it is an error. Use the notions of exceptions in JAVA to implement error checking. 
+Implementation of a Bin Packing Algorithm
 
-Input format: first we specify the initial set of employees as follows: 
-Num_Employees 
-EmployeeName1     BossName1 
-EmployeeName1     BossName1 
-.... 
+The bin packing problem can be described as follows -- there are n bins , say B[1], ..., B[n]. Each bin B[i] has a capacity cap[i], which is an integer. We are also given a set of objects , say O[1], ..., O[m]. Each object O[j] has a size s[j], which is an integer. The problem is to pack these objects into bins, i.e., we should assign each object to a unique bin such that the total sizes of the objects assigned to a bin does not exceed its capacity.
+Let us look at an example. Suppose there are 3 bins with capacities 10,20,15. Suppose there are 5 objects with sizes 6,8,9,2,8. One way of packing the objects is to assign 2nd object to the first bin, 1st and 5th objects to the second bin, and 3rd and 4th objects to the third bin. Of course, there are other ways of doing this packing as well. In fact given an instance of this problem, it might happen that it is not possible to pack the objects into bins.
 
-After this the file will contain a sequence of operations specified as follows (call the above operations 0,1,2,3 in the order they are described above): 
-Num_Commands 
-Query_type1 Employee1 Employee2 (where Query_Type1 is 0,1,2,3. Note that if Query_type is 3, then no other arguments are needed). 
+We will not worry about finding a good algorithm for bin packing. In fact, we will work with the well known Best Fit Algorithm for bin backing. The best fit algorithm for bin packing can be described as follows. When we need to add an object to one of the bins, we will pick the bin which has the largest remaining capacity . Let us go back to the example above. We will add the objects in the order 6,8,9,2,8. When we need to add the first object, the remaining capacities of the bins are 10,20,15 respectively. So it goes to the second bin. The remaining capacities are now 10,14,15. So the 2nd object goes to the third bin. The remaining capacities are now 10,14,7. The 3rd object goes to the 2nd bin. The remaining capacities are 10,5,7. The last 2 objects now go the the first bin.
+
+In this assignment, you will develop an implementation of the best fit algorithm. For sake of implementation, assume that each bin has a unique id, which can be any integer. Similarly, each object has a unique id, which can be any integer. Of course, two bins can have the same capacity or two objects can have the same size.
+
+The program should implement the following operations:
+
+AddBin (id, c) : In this method, we want to add a new bin to the system, whose id is given as a parameter, and c is it's capacity.
+AddObject(id, s) : Here, we want to add a new object to the system, whose id and size are parameters. You should use the best fit algorithm to assign the object to a bin. If the object can not fit into any bin, the program should print the object is too big, otherwise, it should print the id of the bin into which the object has been assigned.
+DeleteObject (id) : Delete the object whose id is given.
+PrintBin(id) : print the ids and sizes of objects in this bin.
+If there are n bins in the system and m objects, the first three operations should take O(log n + log m) time, and the last operation should take O(log n + S) time where S is the number of objects in the particular bin. The total space used by the program should be O(n + m).
