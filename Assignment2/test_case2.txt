@@ -1,51 +1,29 @@
-51
-shubham CEO
-vipin CEO
-jedia CEO
-ayush shubham
-gaurav shubham
-rathi shubham
-maiti shubham
-karthik vipin
-viraj vipin
-rawat vipin
-shashi vipin
-bajiya vipin
-vpc jedia
-mehrol jedia
-engle jedia
-priyanka ayush
-rubal ayush
-kanishka ayush
-anushka ayush
-diksha ayush
-riya rathi
-aishwarya rathi
-arunima rathi
-khushi rathi
-aditi rathi
-shudhish maiti
-rakesh maiti
-verma maiti
-fauji maiti
-bhardwaj engle
-mittal engle
-sheetal engle
-milan engle
-mishra verma
-devanshu verma
-kanadi fauji
-teja fauji
-hemang mittal
-bilv mittal
-tejasvi sheetal
-yewale sheetal
-usman sheetal
-sankalan milan
-manav milan
-harman devanshu
-shreya devanshu
-sonal hemang
-surbhi hemang
-varuni usman
-tanya usman
+1 0 34
+1 1 51
+1 2 57
+2 0 4
+4 0
+1 3 69
+2 1 14
+2 2 44
+2 3 25
+3 1
+4 1
+1 4 25
+2 4 34
+2 5 4
+2 6 16
+3 5
+4 2
+1 5 86
+2 7 4
+2 8 38
+2 9 38
+3 4
+4 0
+1 6 79
+2 10 42
+2 11 7
+2 12 10
+3 9
+4 2
